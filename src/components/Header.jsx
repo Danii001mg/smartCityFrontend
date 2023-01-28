@@ -15,8 +15,6 @@ export default function Header(){
     navigate("/");
   }
 
-  if (sessionStorage.getItem("name") !== null){
-
     return (
       <Navbar light color="danger" expand="md">
         <NavbarBrand><span className="text-white"><strong> MERNFlix</strong></span></NavbarBrand>
@@ -42,5 +40,5 @@ export default function Header(){
         </Collapse>
       </Navbar>
     );
-  }
+  
 }

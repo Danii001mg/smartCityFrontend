@@ -12,7 +12,7 @@ import {
   Media,
 } from "reactstrap";
 
-import { GoogleLogin } from "react-google-login";
+import { GoogleLogin } from '@react-oauth/google';
 import config from "../config.js";
 
 import MyImgLogin from "../images/background_mernflixdark.png";
@@ -29,21 +29,15 @@ export default function Login() {
 
   const onSuccess = (res) => {
     ////////////////////////Lo que debería contener onSucess////////////////////////
-    console.log("[Login Success] currentUser:", res.profileObj);
-    sessionStorage.setItem('name', res.profileObj.getName());
-    sessionStorage.setItem('email', res.profileObj.getEmail());
+    console.log("[Login Success]");
     navigate("/home");
   };
 
   const onFailure = (res) => {
-    ///////////Modificación para acceder a /home a pesar de fallar la autenticación OAuth/////////////
-    sessionStorage.setItem('name', 'Iván González');
-    sessionStorage.setItem('email', 'ivan.gzdiaz@gmail.com');
-    navigate("/home");
 
     ////////////////////////Lo que debería contener onFailure////////////////////////
     console.log("[Login Failed] res:", res);
-    // setLoginMessage(<Alert color="danger">Wrong login access. Try again</Alert>);
+    setLoginMessage(<Alert color="danger">Wrong login access. Try again</Alert>);
 
   };
 
