@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { Collapse, Navbar, NavbarBrand, Nav, NavItem, NavLink, NavbarText } from 'reactstrap';
 
-import { GoogleLogout } from 'react-google-login';
+import { googleLogout } from '@react-oauth/google';
 import config from '../config.js';
 
 export default function Header(){
@@ -11,8 +11,8 @@ export default function Header(){
   const navigate = useNavigate();
 
   const onLogout = () => {
-    sessionStorage.clear();
-    navigate("/");
+    googleLogout(config.clientID);
+    console.log("[Logout Success]");
   }
 
     return (
@@ -28,14 +28,7 @@ export default function Header(){
             </NavItem>
           </Nav>
           <NavbarText>
-            <span className="text-white">{sessionStorage.getItem('name')} </span>
-            <GoogleLogout
-              clientId={config.clientID}
-              //clientId="1066717874249-gtt7keup7vdo58dfq8817j93fb60d7p0.apps.googleusercontent.com"
-              buttonText="Logout"
-              theme='dark'
-              onLogoutSuccess={onLogout}
-            />
+              <Link onClick={onLogout} to="/" style={{ textDecoration: 'none' }}><NavLink><span className="text-white">Logout</span></NavLink></Link>
           </NavbarText>
         </Collapse>
       </Navbar>
