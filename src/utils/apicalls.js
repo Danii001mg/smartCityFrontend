@@ -49,7 +49,7 @@ function getSingleMovie(idmovie) {
  }
 
  function getMyBookmarks(email) {
-    return API.get('/bookmarks/'+email).then(res => res.data);
+    return API.get('/accidentes/'+email).then(res => res.data);
 }
 
 function deleteBookmark(idbookmark) {
