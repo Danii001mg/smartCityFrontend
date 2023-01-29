@@ -57,20 +57,21 @@ export default function MyMovieList(){
   
   const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   
+  const dataset = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  
+  accidentes.map(accidente => {
+    var mes = accidente.fecha.split('/')[1];
+    dataset[mes-1] += 1;
+  });
   
   const data = {
     labels,
     datasets: [
       {
         label: 'Dataset 1',
-        data: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+        data: dataset,
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      },
-      {
-        label: 'Dataset 2',
-        data: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
-      },
+      }
     ],
   };
    
