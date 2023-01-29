@@ -62,7 +62,6 @@ export default function Login() {
                 onFailure={onFailure}
                 cookiePolicy={"single_host_origin"}
                 isSignedIn={true}
-                useBrowser= {false}
               />
               {loginMessage}
             </CardText>
