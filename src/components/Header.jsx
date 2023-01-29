@@ -8,8 +8,6 @@ import config from '../config.js';
 
 export default function Header(){
 
-  const navigate = useNavigate();
-
   const onLogout = () => {
     googleLogout(config.clientID);
     console.log("[Logout Success]");
@@ -17,14 +15,14 @@ export default function Header(){
 
     return (
       <Navbar light color="danger" expand="md">
-        <NavbarBrand><span className="text-white"><strong> MERNFlix</strong></span></NavbarBrand>
+        <NavbarBrand><span className="text-white"><strong>SmartCity</strong></span></NavbarBrand>
         <Collapse navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <Link to="/home" style={{ textDecoration: 'none' }}><NavLink><span className="text-white" border="0">All movies </span></NavLink></Link>
+              <Link to="/home/accidentes" style={{ textDecoration: 'none' }}><NavLink><span className="text-white" border="0">Registro de accidentes </span></NavLink></Link>
             </NavItem>
             <NavItem>
-            <Link to="/home/bookmarks" style={{ textDecoration: 'none' }}><NavLink><span className="text-white">My Bookmarks</span></NavLink></Link>
+              <Link to="/home" style={{ textDecoration: 'none' }}><NavLink><span className="text-white">Dashboard</span></NavLink></Link>
             </NavItem>
           </Nav>
           <NavbarText>

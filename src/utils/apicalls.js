@@ -1,12 +1,38 @@
 import API from './api';
 
 export {
+    getAllAccidentes,
+    addNewAccidente,
+    getSingleAccidente,
+    //getMyBookmarks,
+    deleteAccidente,
     getAllMovies,
     addNewBookmark,
     getSingleMovie,
     getMyBookmarks,
     deleteBookmark
 }
+
+function getAllAccidentes() {
+    return API.get('/accidentes').then(res => res.data);
+}
+
+function addNewAccidente(accidente){
+    return API.post('/accidentes', accidente).then(result => result.data);
+}
+
+function getSingleAccidente(idaccidente) {
+    return API.get('/accidentes/'+idaccidente).then(res => res.data);
+ }
+
+// function getMyBookmarks(email) {
+//    return API.get('/bookmarks/'+email).then(res => res.data);
+//}
+
+function deleteAccidente(idaccidente) {
+    return API.delete('/bookmarks/'+idaccidente).then(result => result.data);
+}
+
 
 function getAllMovies() {
     return API.get('/movies').then(res => res.data);
