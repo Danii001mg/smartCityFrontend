@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 import Login from './Login';
-import AccidentesList from './movies/AccidentesList';
-import ShowMovie from './movies/ShowMovie';
-import MyMovieList from './movies/MyMovieList';
+import AccidentesList from './accidentes/AccidentesList';
+import ShowMovie from './accidentes/ShowMovie';
+import Dashboard from './accidentes/Dashboard';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <div>
         <Routes>
           <Route exact path="/" element={<Login/>} />
-          <Route path="/home" element={<MyMovieList/>} />
+          <Route path="/home" element={<Dashboard/>} />
           <Route path="/home/accidentes" element={<AccidentesList/>} />
           <Route path="/home/accidentes/:id" element={<ShowMovie/>} />
         </Routes>

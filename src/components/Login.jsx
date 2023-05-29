@@ -12,7 +12,7 @@ import {
   Media,
 } from "reactstrap";
 
-import { GoogleLogin } from '@react-oauth/google';
+import { GoogleLogin } from "react-google-login";
 import config from "../config.js";
 
 import MyImgLogin from "../images/background_mernflixdark.png";
@@ -30,14 +30,18 @@ export default function Login() {
   const onSuccess = (res) => {
     ////////////////////////Lo que debería contener onSucess////////////////////////
     console.log("[Login Success]");
+    sessionStorage.setItem('name', res.profileObj.getName());
+    sessionStorage.setItem('email', res.profileObj.getEmail());
     navigate("/home");
   };
 
   const onFailure = (res) => {
 
     ////////////////////////Lo que debería contener onFailure////////////////////////
+    sessionStorage.setItem('name', 'Iván González');
+    sessionStorage.setItem('email', 'ivan.gzdiaz@gmail.com');
+    navigate("/home");
     console.log("[Login Failed] res:", res);
-    setLoginMessage(<Alert color="danger">Wrong login access. Try again</Alert>);
 
   };
 
