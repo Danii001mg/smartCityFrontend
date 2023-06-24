@@ -1,3 +1,4 @@
+import '../../styles/Loader.css';
 import {React, useState, useEffect } from 'react';
 import { getAllAccidentes } from "../../utils/apicalls.js";
 import { Bar } from 'react-chartjs-2';
@@ -10,6 +11,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { Col } from "reactstrap";
 
 
 ChartJS.register(
@@ -70,7 +72,9 @@ export default function BarrasAccidentesMes(){
   };
    
     return accidentes === null ? (
-      <h1 class="text-white">Loading...</h1>
+      <Col>
+        <div class="loader"></div>
+      </Col>
     ) : (
       accidentes.map(accidente => {
         if(accidente.fecha != null) {

@@ -1,3 +1,4 @@
+import '../../styles/Loader.css';
 import React, { useState, useEffect } from "react";
 import { Row, Col, Container, Badge, CardTitle } from "reactstrap";
 import { getAllAccidentes } from "../../utils/apicalls.js";
@@ -26,7 +27,9 @@ export default function MovieList() {
         </Col>
       </Row>
       <Row>
-        <h1 class="text-white">Loading...</h1>
+        <Col>
+          <div class="loader"></div>
+        </Col>
       </Row>
     </div>
   ) : (
@@ -42,7 +45,8 @@ export default function MovieList() {
             Total accidentes found: {accidentes.length}
           </Badge>
         </CardTitle>
-          <table class="table table-sm table-dark">
+        <Row>
+          <table class="table table-bordered table-dark">
             <tr style={{position: 'sticky', top: '0', backgroundColor: 'black'}}>
               <th>Fecha</th>
               <th>Localización</th>
@@ -63,6 +67,7 @@ export default function MovieList() {
             })}
             
           </table>
+          </Row>
       </Container>
     </div>
   );

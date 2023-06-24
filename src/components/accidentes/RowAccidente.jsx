@@ -1,12 +1,6 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
-import { Media, Button } from 'reactstrap';
-import { AiFillEye, AiFillSignal, AiFillAppstore, AiTwotoneCalendar, AiOutlineStar } from "react-icons/ai";
 
 export default function CardMovie({ accidente }){
-
-  const navigate = useNavigate();
 
   return(
           <tr>

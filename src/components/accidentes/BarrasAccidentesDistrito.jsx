@@ -1,3 +1,4 @@
+import '../../styles/Loader.css';
 import {React, useState, useEffect } from 'react';
 import { getAllAccidentes } from "../../utils/apicalls.js";
 import { Bar } from 'react-chartjs-2';
@@ -10,6 +11,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { Col } from "reactstrap";
 
 
 ChartJS.register(
@@ -117,7 +119,9 @@ export default function BarrasAccidentesDistrito(){
   };
    
     return accidentes === null ? (
-      <h1 class="text-white">Loading...</h1>
+      <Col>
+        <div class="loader"></div>
+      </Col>
     ) : (
       accidentes.map(accidente => {
         if((accidente.distrito !== null) || (accidente.distrito !== 'NULL')) {
@@ -126,7 +130,6 @@ export default function BarrasAccidentesDistrito(){
       }),
       labels.sort((a, b) => dataset[labels.indexOf(b)] - dataset[labels.indexOf(a)]),
       dataset.sort((a, b) => b - a),
-      console.log(dataset),
       <div>
         <Bar type={'horizontalBar'} data={data} options={options} />
       </div>

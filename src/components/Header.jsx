@@ -15,7 +15,7 @@ export default function Header(){
 
     return (
       <Navbar light color="danger" expand="md">
-        <NavbarBrand><span className="text-white"><strong>SmartCity</strong></span></NavbarBrand>
+        <NavbarBrand><Link to="/home" style={{ textDecoration: 'none' }}><NavLink><span className="text-white" border="0"><h4><strong>SmartCity</strong></h4></span></NavLink></Link></NavbarBrand>
         <Collapse navbar>
           <Nav className="me-auto" navbar>
             <NavItem>

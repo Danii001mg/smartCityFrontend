@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
-import { Row, Col, Container, Badge, CardTitle, Table, Button, Media } from 'reactstrap';
-import { AiFillEye, AiOutlineDelete } from "react-icons/ai";
+import '../../styles/Loader.css';
+import { Row, Col } from 'reactstrap';
 import BarrasAccidentesDistrito from './BarrasAccidentesDistrito.jsx';
-import { getAllAccidentes, deleteBookmark } from "../../utils/apicalls.js";
+import { getAllAccidentes } from "../../utils/apicalls.js";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -48,7 +47,11 @@ export default function Dashboard(){
             <Header/>
           </Col>
         </Row>
-        <Row><h1 class="text-white">Loading...</h1></Row>
+        <Row>
+          <Col>
+            <div class="loader"></div>
+          </Col>
+        </Row>
       </div>) 
       : (
       <div>
