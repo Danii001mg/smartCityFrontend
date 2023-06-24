@@ -22,7 +22,10 @@ export default function Header(){
               <Link to="/home/accidentes" style={{ textDecoration: 'none' }}><NavLink><span className="text-white" border="0">Registro de accidentes </span></NavLink></Link>
             </NavItem>
             <NavItem>
-              <Link to="/home" style={{ textDecoration: 'none' }}><NavLink><span className="text-white">Dashboard</span></NavLink></Link>
+              <Link to="/home/meses" style={{ textDecoration: 'none' }}><NavLink><span className="text-white">Accidentes por Mes</span></NavLink></Link>
+            </NavItem>
+            <NavItem>
+              <Link to="/home/distritos" style={{ textDecoration: 'none' }}><NavLink><span className="text-white">Accidentes por Distrito</span></NavLink></Link>
             </NavItem>
           </Nav>
           <NavbarText>

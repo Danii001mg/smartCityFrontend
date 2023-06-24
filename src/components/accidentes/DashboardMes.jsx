@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Row, Col, Container, Badge, CardTitle, Table, Button, Media } from 'reactstrap';
 import { AiFillEye, AiOutlineDelete } from "react-icons/ai";
+import BarrasAccidentesMes from './BarrasAccidentesMes.jsx';
 import BarrasAccidentesDistrito from './BarrasAccidentesDistrito.jsx';
 import { getAllAccidentes, deleteBookmark } from "../../utils/apicalls.js";
 import {
@@ -58,7 +59,9 @@ export default function Dashboard(){
           </Col>
         </Row> 
         <Row>
-            <BarrasAccidentesDistrito/>
+          <Col>
+            <BarrasAccidentesMes/>
+          </Col>
         </Row>
       </div>
     );       
