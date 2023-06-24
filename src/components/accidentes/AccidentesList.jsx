@@ -46,7 +46,7 @@ export default function MovieList() {
           </Badge>
         </CardTitle>
         <Row>
-          <table class="table table-bordered table-dark">
+          <table class="table table-sm table-bordered table-dark">
             <tr style={{position: 'sticky', top: '0', backgroundColor: 'black'}}>
               <th>Fecha</th>
               <th>Localización</th>
