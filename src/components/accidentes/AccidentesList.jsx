@@ -6,7 +6,7 @@ import { getAllAccidentes } from "../../utils/apicalls.js";
 import Header from "../Header.jsx";
 import RowAccidente from "./RowAccidente.jsx";
 
-export default function MovieList() {
+export default function AccidentesList() {
   const [accidentes, setAccidentes] = useState(null);
 
   const getAccidentes = () => {

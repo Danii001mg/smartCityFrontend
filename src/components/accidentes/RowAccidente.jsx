@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CardMovie({ accidente }){
+export default function RowAccidente({ accidente }){
 
   return(
           <tr>
