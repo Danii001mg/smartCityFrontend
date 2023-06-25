@@ -5,7 +5,6 @@ import {
   Row,
   Col,
   Container,
-  Alert,
   Card,
   CardTitle,
   CardText,
@@ -15,15 +14,16 @@ import {
 import { GoogleLogin } from "react-google-login";
 import config from "../config.js";
 
-import MyImgLogin from "../images/background_mernflixdark.png";
+import MyImgLogin from "../images/background_accidentes.png";
 
 var imgStyle = {
   width: "100%",
-  height: "100%",
+  height: "auto",
+  margin: "auto",
 };
 
 export default function Login() {
-  const [loginMessage, setLoginMessage] = useState(null);
+  const [loginMessage] = useState(null);
 
   const navigate = useNavigate();
 
@@ -55,7 +55,7 @@ export default function Login() {
             className="text-center"
             style={{ backgroundColor: "#000", borderColor: "#000" }}
           >
-            <CardTitle tag="h5">Welcome to MERNFlix</CardTitle>
+            <CardTitle tag="h5">Welcome!!</CardTitle>
             <CardText>React-based web project"</CardText>
             <CardText>
               <GoogleLogin

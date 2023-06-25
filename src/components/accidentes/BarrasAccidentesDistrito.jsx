@@ -123,7 +123,7 @@ export default function BarrasAccidentesDistrito(){
         <div class="loader"></div>
       </Col>
     ) : (
-      accidentes.map(accidente => {
+      accidentes.forEach(accidente => {
         if((accidente.distrito !== null) || (accidente.distrito !== 'NULL')) {
           dataset[labels.indexOf(accidente.distrito)] += 1;
         }

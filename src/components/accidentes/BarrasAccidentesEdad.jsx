@@ -23,11 +23,10 @@ ChartJS.register(
   Legend
 );
 
-export default function BarrasAccidentesMes(){
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  
-  const dataset = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+export default function BarrasAccidentesEdad(){
 
+  const labels = ["Menor de 5 años","De 6 a 9 años","De 10 a 14 años","De 15 a 17 años","De 18 a 20 años","De 21 a 24 años","De 25 a 29 años","De 30 a 34 años","De 35 a 39 años","De 40 a 44 años","De 45 a 49 años","De 50 a 54 años","De 55 a 59 años","De 60 a 64 años","De 65 a 69 años","De 70 a 74 años","Más de 74 años"];
+  const dataset = Array(labels.length).fill(0);
 
   const [accidentes, setAccidentes] = useState(null);
 
@@ -44,16 +43,16 @@ export default function BarrasAccidentesMes(){
   console.log(accidentes);
   
   
-
   const options = {
+    indexAxis: 'y',
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        display: false,
       },
       title: {
         display: true,
-        text: 'Accidentes por mes',
+        text: 'Accidentes por edad',
       },
     },
   };
@@ -64,9 +63,13 @@ export default function BarrasAccidentesMes(){
     labels,
     datasets: [
       {
-        label: 'Número de accidentes',
+        label: 'Número de accidentes por edad',
         data: dataset,
-        backgroundColor: 'rgba(255, 99, 132, 0.5)'
+        // do a degradient color for the 21 bars
+        backgroundColor:'rgba(300, 99, 132, 0.6)',
+        borderColor:'rgba(300, 99, 132, 1)',
+        borderWidth: 2,
+        hoverBorderWidth: 0
       }
     ],
   };
@@ -77,13 +80,13 @@ export default function BarrasAccidentesMes(){
       </Col>
     ) : (
       accidentes.forEach(accidente => {
-        if(accidente.fecha != null) {
-          var mes = accidente.fecha.split('/')[1];
-          dataset[mes-1] += 1;
+        if((accidente.rango_edad !== null) || (accidente.rango_edad !== 'NULL')) {
+          dataset[labels.indexOf(accidente.rango_edad)] += 1;
         }
       }),
+      console.log(Array.from(new Set(accidentes.map(accident => accident.rango_edad)))),
       <div>
-        <Bar data={data} options={options} />
+        <Bar type={'horizontalBar'} data={data} options={options} />
       </div>
     );       
   }

@@ -1,0 +1,29 @@
+.right{
+    text-align: right;
+}
+
+.rightRed{
+    text-align: right;
+    color: red;
+}
+
+.center{
+    text-align: center;
+}
+
+.verticalCenterLeft{
+    width: 100%;
+    padding: 70px 0;
+    font-size: 50px;
+}
+.verticalCenterRight{
+    width: 100%;
+    padding: 70px 0;
+    padding-left: 80px;
+    font-size: 50px;
+}
+.verticalCenter2{
+    width: 100%;
+    padding: 58px 0;
+    font-size: 70px;
+}
